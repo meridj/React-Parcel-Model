@@ -8,9 +8,13 @@ import ReactDOM from 'react-dom';
  * Styles
  */
 import './styles/reset.css';
-import './styles/index.css';
+import './styles/index.styl';
 
 const App = () => <h1>React-Parcel-Model</h1>;
-const targetRootNode = document.getElementById('root');
 
-ReactDOM.render(<App />, targetRootNode);
+document.addEventListener('DOMContentLoaded', () => {
+  const targetRootNode = document.getElementById('root');
+  const rootComponent = <App />;
+
+  ReactDOM.render(rootComponent, targetRootNode);
+});
