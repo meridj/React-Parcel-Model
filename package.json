@@ -23,6 +23,7 @@
     "eslint-plugin-react": "^7.8.2",
     "parcel-bundler": "^1.8.1",
     "postcss-modules": "^1.1.0",
+    "redux-devtools-extension": "^2.13.2",
     "stylint": "^1.5.9",
     "stylus": "^0.54.5"
   },

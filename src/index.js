@@ -1,20 +1,30 @@
 /**
- * Packages
+ * Npm imports
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 /**
- * Styles
+ * Local imports
  */
+import { App } from './containers/';
+
 import './styles/reset.css';
 import './styles/index.styl';
 
-const App = () => <h1>React-Parcel-Model</h1>;
-
+/**
+ * Code
+ */
 document.addEventListener('DOMContentLoaded', () => {
-  const targetRootNode = document.getElementById('root');
-  const rootComponent = <App />;
+  const store = createStore(() => {}, composeWithDevTools());
 
-  ReactDOM.render(rootComponent, targetRootNode);
+  ReactDOM.render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
 });
